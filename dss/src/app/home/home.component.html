@@ -1,0 +1,36 @@
+
+<Page class="page">
+    <TabView id="tabViewContainer" tabBackgroundColor="#121212" selectedTabTextColor="#ffffff" tabTextColor="#aaa" androidSelectedTabHighlightColor="#fff">
+        <StackLayout *tabItem="{title: 'Sounds'}" class="bg-texture">
+            <StackLayout>
+                <TabView id="tabViewContainerInner" tabBackgroundColor="#121212" selectedTabTextColor="#ffffff" tabTextColor="#aaa" androidSelectedTabHighlightColor="#fff">
+                    <StackLayout *tabItem="{title: 'Carvings'}">
+                        <StackLayout>
+                            <ScrollView>
+                                <WrapLayout>
+                                    <Button *ngFor="let x of carvings" (tap)="onItemTap(x)" class="bg-texture-button"   width="48%" height="150" style="margin: 5 1%;">
+                                    </Button>
+                                </WrapLayout>
+                            </ScrollView>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout *tabItem="{title: 'Dialogues'}">
+                        <StackLayout>
+                            <Label text="Second Tab" textWrap="true" class="m-15 h2 text-left" color="blue"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout *tabItem="{title: 'Other'}">
+                        <StackLayout>
+                            <Label text="Second Tab" textWrap="true" class="m-15 h2 text-left" color="blue"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </TabView>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout *tabItem="{title: 'Gestures'}" class="bg-texture">
+            <StackLayout>
+                <Label text="Second Tab" textWrap="true" class="m-15 h2 text-left" color="blue"></Label>
+            </StackLayout>
+        </StackLayout>
+    </TabView>
+</Page>

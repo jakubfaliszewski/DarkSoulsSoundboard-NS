@@ -41,3 +41,23 @@ components that have the btn class name.
     flex-direction: row;
     border: 3px solid red;
 }
+
+.button-img{
+    z-index: 123;
+}
+
+.button-text{
+    z-index: 125;
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    /*bottom: 0;*/
+    left: 0;
+    top: 140%;
+    text-transform: uppercase;
+}
+
+.button-con{
+
+}

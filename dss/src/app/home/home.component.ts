@@ -11,37 +11,37 @@ export class HomeComponent implements OnInit {
         {
             name: 'Hello',
             image: 'assets/imgs/hello.png',
-            onlineUrl: 'assets/mp3/hello.txt'
+            url: 'assets/mp3/hello.mp3'
         },
         {
             name: "I'm sorry",
             image: 'assets/imgs/sorry.png',
-            onlineUrl: 'assets/mp3/sorry.txt'
+            url: 'assets/mp3/sorry.mp3'
         },
         {
             name: "Thank you",
             image: 'assets/imgs/thyou.png',
-            onlineUrl: 'assets/mp3/thyou.txt'
+            url: 'assets/mp3/thyou.mp3'
         },
         {
             name: "Help me",
             image: 'assets/imgs/helpme.png',
-            onlineUrl: 'assets/mp3/helpme.txt'
+            url: 'assets/mp3/helpme.mp3'
         },
         {
             name: "Very good",
             image: 'assets/imgs/vg.png',
-            onlineUrl: 'assets/mp3/vg.txt'
+            url: 'assets/mp3/vg.mp3'
         }
     ]; constructor(private page: Page) {
 
     }
-    public onItemTap(x) {
-        console.log(x);
+    public onItemTap(sound) {
+        console.log('~/' + sound);
+        
+
     }
     ngOnInit(): void {
         this.page.actionBarHidden = true;
-        //this.page.backgroundImage = "res://mainbg";
-
     }
 }

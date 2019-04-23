@@ -3,6 +3,7 @@ import { Page } from "tns-core-modules/ui/page";
 import { TNSPlayer } from 'nativescript-audio-player';
 import { ShareFile } from 'nativescript-share-file';
 import { Folder, path, knownFolders } from "tns-core-modules/file-system";
+import * as applicationModule from "tns-core-modules/application";
 
 // ~ = app directory
 @Component({
@@ -69,12 +70,13 @@ export class HomeComponent implements OnInit {
         this.shareFile = new ShareFile();
         const folder: Folder = <Folder>knownFolders.currentApp();
         const folderPath: string = path.join(folder.path, "");
-        let file = folderPath + '/'+ sound
+        let file = folderPath + '/' + sound
         console.log(file);
+
         this.shareFile.open(
             {
                 path: file,
-                intentTitle: 'Share sound'
+                intentTitle: "SHARE"
             });
     }
 

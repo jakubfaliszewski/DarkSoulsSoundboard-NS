@@ -23,7 +23,7 @@
     "@angular/router": "~7.2.0",
     "nativescript-angular": "~7.2.0",
     "nativescript-audio-player": "^1.0.3",
-    "nativescript-share-file": "^1.0.4",
+    "nativescript-share-file": "1.0.2",
     "nativescript-social-share": "^1.5.1",
     "nativescript-theme-core": "^1.0.4",
     "reflect-metadata": "~0.1.12",

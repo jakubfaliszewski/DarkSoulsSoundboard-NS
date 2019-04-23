@@ -1,7 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { Page } from "tns-core-modules/ui/page";
 import { TNSPlayer } from 'nativescript-audio-player';
- // ~ = app directory
+import { ShareFile } from 'nativescript-share-file';
+import { Folder, path, knownFolders } from "tns-core-modules/file-system";
+
+// ~ = app directory
 @Component({
     selector: "Home",
     moduleId: module.id,
@@ -9,6 +12,7 @@ import { TNSPlayer } from 'nativescript-audio-player';
 })
 export class HomeComponent implements OnInit {
     private _player: TNSPlayer;
+    shareFile: ShareFile;
 
     carvings = [
         {
@@ -36,13 +40,12 @@ export class HomeComponent implements OnInit {
             image: 'assets/imgs/vg.png',
             url: 'assets/mp3/vg.mp3'
         }
-    ]; constructor(private page: Page) {
+    ];
+    constructor(private page: Page) {
         this._player = new TNSPlayer();
         this._player.debug = true; // set true to enable TNSPlayer console logs for debugging.
-       
-
     }
-    public onItemTap(sound) {
+    public onTap(sound) {
         console.log('~/' + sound);
         this._player
             .initFromFile({
@@ -59,6 +62,20 @@ export class HomeComponent implements OnInit {
                 });
             });
 
+    }
+
+    public onPress(sound) {
+        console.log('Pressed!');
+        this.shareFile = new ShareFile();
+        const folder: Folder = <Folder>knownFolders.currentApp();
+        const folderPath: string = path.join(folder.path, "");
+        let file = folderPath + '/'+ sound
+        console.log(file);
+        this.shareFile.open(
+            {
+                path: file,
+                intentTitle: 'Share sound'
+            });
     }
 
     private _trackComplete(args: any) {

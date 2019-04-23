@@ -9,14 +9,14 @@
                             <ScrollView>
                                 <WrapLayout>
                                     <AbsoluteLayout *ngFor="let x of carvings"  width="50%" height="170" class="button-con">
-                                        <Button (tap)="onItemTap(x.url)" class="bg-texture-button" width="90%" height="90%" style="margin: 5%">
-                                        </Button>
+                                        <Button (tap)="onTap(x.url)" (longPress)="onPress(x.url)" class="bg-texture-button" width="90%" height="90%" style="margin: 5%">
+                                        </Button>  
                                         <Image [src]="'~/'+x.image" stretch="aspectFit" class="button-img"  width="90%" height="90%" style="margin: 0 5% 10%;"></Image>
                                         <label class="button-text" [text]="x.name"></label>
                                     </AbsoluteLayout>
                                 </WrapLayout>
                             </ScrollView>
-                        </StackLayout>
+                        </StackLayout> 
                     </StackLayout>
                     <StackLayout *tabItem="{title: 'Dialogues'}">
                         <StackLayout>

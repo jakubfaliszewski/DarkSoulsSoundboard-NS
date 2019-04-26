@@ -253,6 +253,7 @@ module.exports = env => {
             new CopyWebpackPlugin([
                 { from: { glob: "fonts/**" } },
                 { from: { glob: "**/*.jpg" } },
+                { from: { glob: "**/*.mp3" } },
                 { from: "assets/**" },
                 { from: { glob: "**/*.png" } }
             ], { ignore: [`${relative(appPath, appResourcesFullPath)}/**`] }),

@@ -46,16 +46,18 @@ components that have the btn class name.
     z-index: 123;
 }
 
-.button-text{
+.button-text {
     z-index: 125;
     color: white;
     text-align: center;
-    width: 100%;
+    width: 90%;
     position: absolute;
     /*bottom: 0;*/
-    left: 0;
+    left: 5%;
     top: 140%;
     text-transform: uppercase;
+    background-color: rgba(0,0,0,0.4);
+    border-bottom: 2px solid rgba(0,0,0,0.7);
 }
 
 .button-con{

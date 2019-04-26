@@ -20,12 +20,28 @@
                     </StackLayout>
                     <StackLayout *tabItem="{title: 'Dialogues'}">
                         <StackLayout>
-                            <Label text="Second Tab" textWrap="true" class="m-15 h2 text-left" color="blue"></Label>
+                            <ScrollView>
+                                <WrapLayout>
+                                    <AbsoluteLayout *ngFor="let x of diags" width="50%" height="170" class="button-con">
+                                        <Button (tap)="onTap(x.url)" (longPress)="onPress(x.url)" class="bg-texture-button" width="90%" height="90%" style="margin: 5%"></Button>
+                                        <Image [src]="'~/'+x.image" stretch="aspectFit" class="button-img" width="90%" height="90%" style="margin: 0 5% 10%;"></Image>
+                                        <label class="button-text" [text]="x.name"></label>
+                                    </AbsoluteLayout>
+                                </WrapLayout>
+                            </ScrollView>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout *tabItem="{title: 'Other'}">
                         <StackLayout>
-                            <Label text="Second Tab" textWrap="true" class="m-15 h2 text-left" color="blue"></Label>
+                            <ScrollView>
+                                <WrapLayout>
+                                    <AbsoluteLayout *ngFor="let x of others" width="50%" height="170" class="button-con">
+                                        <Button (tap)="onTap(x.url)" (longPress)="onPress(x.url)" class="bg-texture-button" width="90%" height="90%" style="margin: 5%"></Button>
+                                        <Image [src]="'~/'+x.image" stretch="aspectFit" class="button-img" width="90%" height="90%" style="margin: 0 5% 10%;"></Image>
+                                        <label class="button-text" [text]="x.name"></label>
+                                    </AbsoluteLayout>
+                                </WrapLayout>
+                            </ScrollView>
                         </StackLayout>
                     </StackLayout>
                 </TabView>
@@ -33,7 +49,15 @@
         </StackLayout>
         <StackLayout *tabItem="{title: 'Gestures'}" class="bg-texture">
             <StackLayout>
-                <Label text="Second Tab" textWrap="true" class="m-15 h2 text-left" color="blue"></Label>
+                <ScrollView>
+                    <WrapLayout>
+                        <AbsoluteLayout *ngFor="let x of gestures" width="50%" height="170" class="button-con">
+                            <Button (longPress)="onPress(x.src)" class="bg-texture-button" width="90%" height="90%" style="margin: 5%"></Button>
+                            <Image [src]="'~/'+x.src" stretch="aspectFit" class="button-img" width="90%" height="90%" style="margin: 0 5% 10%;"></Image>
+                            <label class="button-text" [text]="x.name"></label>
+                        </AbsoluteLayout>
+                    </WrapLayout>
+                </ScrollView>
             </StackLayout>
         </StackLayout>
     </TabView>

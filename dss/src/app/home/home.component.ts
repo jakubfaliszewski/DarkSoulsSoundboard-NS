@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     // gavlan
     // OCELOTTEEEE
     // death sound
-    // bonfire lit
     // STICKERS
 
     carvings = [
@@ -237,6 +236,11 @@ export class HomeComponent implements OnInit {
             name: "Victory Achieved",
             image: 'assets/imgs/va.png',
             url: 'assets/mp3/va.mp3'
+        },
+        {
+            name: "Bonfire",
+            image: 'assets/imgs/fire.png',
+            url: 'assets/mp3/fire.mp3'
         },
         {
             name: "New Area",
